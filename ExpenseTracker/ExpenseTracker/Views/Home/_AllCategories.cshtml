@@ -25,7 +25,7 @@
                 </td>
                 <td> </td>
                 <td>@Html.ActionLink("Delete", "RemoveCategory", "Home", @item, HttpMethods.Post)<br />
-                    <a asp-controller="Home" asp-action="_EntryCategory" asp-route-id="@item.Id" class="text-success">Update</a>
+                    <a asp-controller="Home" asp-action="_EntryCategory" asp-route-_catID="@item.Id" class="text-success">Update</a>
                 </td>
             </tr>
         }

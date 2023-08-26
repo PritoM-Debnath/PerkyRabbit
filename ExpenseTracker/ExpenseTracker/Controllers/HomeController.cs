@@ -26,7 +26,7 @@ public class HomeController : Controller
         AllExpenseCategories = await Task.Run(() => categoryRepo.GetAllExpenseCategories());
         return PartialView(AllExpenseCategories);
     }
-    // post or not ?
+
     public async Task<PartialViewResult> _SingleCategories(string _name)
     {
         var data = await Task.Run(() => categoryRepo.GetByName(_name));
@@ -44,6 +44,9 @@ public class HomeController : Controller
     public async Task<IActionResult> _EntryCategory(int _catID)
     {
         IsCategoryUpdating=true;
+
+        TempData["IsCategoryUpdating"] = true; 
+        TempData["_catID"] = _catID;
 
         var data = categoryRepo.GetById(_catID);
         if(data == null) { return NotFound(); }
@@ -67,8 +70,10 @@ public class HomeController : Controller
         {
             if (ModelState.IsValid)
             {
+                _category.Id = (int)TempData["_catID"];
                 categoryRepo.UpdateExpenseCategory(_category);
                 IsCategoryUpdating = false;
+                TempData["IsCategoryUpdating"] = false;
             }
         }
 

@@ -32,7 +32,7 @@ namespace ExpenseTracker.Data.Repositories
             await appDataContext.ExpenseCategories.AddAsync(expenseCategory);
             var IsAdded = await appDataContext.SaveChangesAsync();
 
-            return bool.Parse(IsAdded.ToString());
+            return (IsAdded != 0);
         }
 
         public async Task RemoveExpenseCategory(ExpenseCategory expenseCategory)
