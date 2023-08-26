@@ -46,7 +46,7 @@ public class HomeController : Controller
         TempData["IsCategoryUpdating"] = true; 
         TempData["_catID"] = _catID;
 
-        var data = categoryRepo.GetById(_catID);
+        var data = await Task.Run(()=> categoryRepo.GetById(_catID));
         if(data == null) { return NotFound(); }
         else return View(data);
     }

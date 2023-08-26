@@ -26,9 +26,10 @@ namespace ExpenseTracker.Data.Repositories
         public bool AddExpenseEntryForCategory(ExpenseCategory expenseCategory,ExpenseEntry entry)
         {
             appDataContext.ExpenseCategories.Find(expenseCategory).Expenses.Add(entry);
+            
             var cc = appDataContext.SaveChanges();
 
-            return bool.Parse(cc.ToString());
+            return (cc != 0);
 
         }
 
