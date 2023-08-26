@@ -10326,11 +10326,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\ExpenseTracker\\ExpenseTracker\\ExpenseTracker.csproj",
+      "projectUniqueName": "F:\\GITHUB\\PerkyRabbit\\ExpenseTracker\\ExpenseTracker\\ExpenseTracker.csproj",
       "projectName": "ExpenseTracker",
-      "projectPath": "C:\\Users\\User\\Desktop\\ExpenseTracker\\ExpenseTracker\\ExpenseTracker.csproj",
+      "projectPath": "F:\\GITHUB\\PerkyRabbit\\ExpenseTracker\\ExpenseTracker\\ExpenseTracker.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\ExpenseTracker\\ExpenseTracker\\obj\\",
+      "outputPath": "F:\\GITHUB\\PerkyRabbit\\ExpenseTracker\\ExpenseTracker\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

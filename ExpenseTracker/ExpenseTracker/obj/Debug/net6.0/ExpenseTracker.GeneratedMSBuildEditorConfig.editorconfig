@@ -9,45 +9,45 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ExpenseTracker
 build_property.RootNamespace = ExpenseTracker
-build_property.ProjectDir = C:\Users\User\Desktop\ExpenseTracker\ExpenseTracker\
+build_property.ProjectDir = F:\GITHUB\PerkyRabbit\ExpenseTracker\ExpenseTracker\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\User\Desktop\ExpenseTracker\ExpenseTracker
+build_property.MSBuildProjectDirectory = F:\GITHUB\PerkyRabbit\ExpenseTracker\ExpenseTracker
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/User/Desktop/ExpenseTracker/ExpenseTracker/Views/Home/Index.cshtml]
+[F:/GITHUB/PerkyRabbit/ExpenseTracker/ExpenseTracker/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/ExpenseTracker/ExpenseTracker/Views/Home/Privacy.cshtml]
+[F:/GITHUB/PerkyRabbit/ExpenseTracker/ExpenseTracker/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/ExpenseTracker/ExpenseTracker/Views/Home/_AllCategories.cshtml]
+[F:/GITHUB/PerkyRabbit/ExpenseTracker/ExpenseTracker/Views/Home/_AllCategories.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfQWxsQ2F0ZWdvcmllcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/ExpenseTracker/ExpenseTracker/Views/Home/_EntryCategory.cshtml]
+[F:/GITHUB/PerkyRabbit/ExpenseTracker/ExpenseTracker/Views/Home/_EntryCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfRW50cnlDYXRlZ29yeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/ExpenseTracker/ExpenseTracker/Views/Shared/Error.cshtml]
+[F:/GITHUB/PerkyRabbit/ExpenseTracker/ExpenseTracker/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/ExpenseTracker/ExpenseTracker/Views/Shared/_ValidationScriptsPartial.cshtml]
+[F:/GITHUB/PerkyRabbit/ExpenseTracker/ExpenseTracker/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/ExpenseTracker/ExpenseTracker/Views/_ViewImports.cshtml]
+[F:/GITHUB/PerkyRabbit/ExpenseTracker/ExpenseTracker/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/ExpenseTracker/ExpenseTracker/Views/_ViewStart.cshtml]
+[F:/GITHUB/PerkyRabbit/ExpenseTracker/ExpenseTracker/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/ExpenseTracker/ExpenseTracker/Views/Shared/_Layout.cshtml]
+[F:/GITHUB/PerkyRabbit/ExpenseTracker/ExpenseTracker/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-7m57npvwnm
