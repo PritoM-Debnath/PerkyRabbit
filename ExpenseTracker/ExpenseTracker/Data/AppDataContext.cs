@@ -10,8 +10,6 @@ namespace ExpenseTracker.Data
 
         public AppDataContext()
         {
-            //if (!Database.EnsureCreated()) Database.EnsureCreatedAsync();
-
             if (Database.CanConnect()) AppDataSeeder.SeedData(this);
         }
 

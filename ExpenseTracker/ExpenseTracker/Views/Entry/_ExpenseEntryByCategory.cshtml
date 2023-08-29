@@ -1,0 +1,54 @@
+﻿@model ExpenseTracker.Models.ExpenseEntry
+
+<h4>Make An Entry for</h4><br />
+
+<form asp-action="_ExpenseEntryByCategory">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label asp-for="Description" class="control-label"></label>
+                            <input asp-for="Description" class="form-control" />
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="Amount" class="control-label"></label>
+                            <input asp-for="Amount" class="form-control" />
+                            <span asp-validation-for="Amount" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="ExpenseDate" class="control-label"></label>
+                    <input type="date" asp-for="ExpenseDate" class="form-control" />
+                    <span asp-validation-for="ExpenseDate" class="text-danger"></span>
+                </div>
+                @*    <div class="form-group">
+                <label asp-for="CategoryId" class="control-label"></label>
+                <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
+                </div>*@
+
+            </div>
+
+            <div class="col-md-12"><br />
+                <input type="submit" value="Create" class="btn btn-dark col-md-12" />
+            </div>
+        </div>
+
+    </div>
+    <br />
+
+   
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -12,7 +12,7 @@ public class HomeController : Controller
 
     public static IEnumerable<ExpenseCategory> AllExpenseCategories { get; set; }
 
-    //public static bool IsCategoryUpdating=false;
+    public static bool IsCategoryUpdating=false;
 
     public HomeController(IExpenseCategoryRepository expenseCategoryRepository)
     {
@@ -43,10 +43,12 @@ public class HomeController : Controller
     [HttpGet]
     public async Task<IActionResult> _EntryCategory(int _catID)
     {
+        IsCategoryUpdating=true;
+
         TempData["IsCategoryUpdating"] = true; 
         TempData["_catID"] = _catID;
 
-        var data = await Task.Run(()=> categoryRepo.GetById(_catID));
+        var data = categoryRepo.GetById(_catID);
         if(data == null) { return NotFound(); }
         else return View(data);
     }
@@ -54,16 +56,7 @@ public class HomeController : Controller
     [HttpPost]
     public async Task<IActionResult> _EntryCategory(ExpenseCategory _category)
     {
-        if (TempData.ContainsKey("IsCategoryUpdating") && (bool)TempData["IsCategoryUpdating"]) 
-        {
-            if (ModelState.IsValid)
-            {
-                _category.Id = (int)TempData["_catID"];
-                categoryRepo.UpdateExpenseCategory(_category);
-                TempData["IsCategoryUpdating"] = false;
-            }
-        }
-        else
+        if (!IsCategoryUpdating)
         {
             if (!string.IsNullOrEmpty(_category.Name))
             {
@@ -72,6 +65,16 @@ public class HomeController : Controller
                     if (ModelState.IsValid) await categoryRepo.AddExpenseCategory(_category);
             }
             else TempData["Message"] = @"<script> alert('No Category Name?');</script>";
+        }
+        else
+        {
+            if (ModelState.IsValid)
+            {
+                _category.Id = (int)TempData["_catID"];
+                categoryRepo.UpdateExpenseCategory(_category);
+                IsCategoryUpdating = false;
+                TempData["IsCategoryUpdating"] = false;
+            }
         }
 
         return RedirectToAction("Index");

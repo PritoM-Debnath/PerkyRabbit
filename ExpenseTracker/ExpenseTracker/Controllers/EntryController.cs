@@ -11,85 +11,86 @@ namespace ExpenseTracker.Controllers
         private readonly IExpenseCategoryRepository categoryRepo;
 
 
-        public EntryController(IExpenseCategoryRepository expenseCategoryRepository, IExpenseEntryRepository  expenseEntryRepository )
+        public EntryController(IExpenseCategoryRepository expenseCategoryRepository, IExpenseEntryRepository expenseEntryRepository)
         {
             this.categoryRepo = expenseCategoryRepository;
             this.entryRepo = expenseEntryRepository;
         }
 
-        // GET: EntryController
-        public ActionResult Index()
+        public ActionResult Index() => View();
+
+        public HttpContext GetHttpContext()
         {
-            return View();
-        }
-        
-        // GET: EntryController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
+            return HttpContext;
         }
 
-        // GET: EntryController/Create
-        public ActionResult Create()
+        public static int updatingCatId = 0;
+
+        [HttpGet("Category/_ExpenseEntry")]
+        public async Task<IActionResult> _ExpenseEntry(int _categoryId)
         {
-            return View();
+            if (_categoryId>0)
+            {
+                updatingCatId = _categoryId;
+            }
+            return PartialView("Index", "Category");
         }
 
-        // POST: EntryController/Create
+
+        [HttpPost("Category/_ExpenseEntry")]
+        public async Task<IActionResult> _ExpenseEntry(ExpenseEntry expenseEntry)
+        {
+
+            int _cID = updatingCatId;
+
+            if (_cID>0 && expenseEntry !=null)
+            {
+  
+                await entryRepo.AddExpenseEntryForCategory(_cID, expenseEntry);
+                return RedirectToAction("Index", "Category");
+            }
+            else return RedirectToAction("Index","Category");
+        }
+
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<IActionResult> _ExpenseEntryByCategory(int _categoryId, ExpenseEntry _entry)
         {
-            try
+            if (TempData.ContainsKey("IsEntityUpdating") && (bool)TempData["IsEntityUpdating"])
             {
-                return RedirectToAction(nameof(Index));
+                if (ModelState.IsValid)
+                {
+                    _categoryId = (int)TempData["Id"];
+                    entryRepo.UpdateEntryCategory(_entry);
+                    TempData["IsEntityUpdating"] = false;
+                }
             }
-            catch
+            else
             {
-                return View();
+                if (ModelState.IsValid) await entryRepo.AddExpenseEntryForCategory(_categoryId, _entry);
+
+                else TempData["Message"] = @"<script> alert('Please check again');</script>";
             }
+
+            return RedirectToAction("Index");
         }
 
-        // GET: EntryController/Edit/5
-        public ActionResult Edit(int id)
+        public async Task<PartialViewResult> _AllEntry()
         {
-            return View();
+            var data = entryRepo.GetAllExpenseEntries();
+            if (data != null && data.Any()) return PartialView(data);
+            else return PartialView(null);
+
+            
         }
 
-        // POST: EntryController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+
+
+        public PartialViewResult _AllEntryByCategory(ExpenseCategory _category)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            var allEntryByCategory = entryRepo.GetExpenseEntriesByCategory(_category);
+            if (allEntryByCategory != null && allEntryByCategory.Any()) return PartialView(allEntryByCategory);
+            else return PartialView();
         }
 
-        // GET: EntryController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: EntryController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }

@@ -14,4 +14,11 @@ public partial class ExpenseEntry
 
     [Required]
     public DateTime ExpenseDate { get; set; } = DateTime.Now;
+
+    [ForeignKey("Id")]
+    public int CategoryId { get; set; }
+    public virtual ExpenseCategory Category { get; set; }
 }
+
+
+

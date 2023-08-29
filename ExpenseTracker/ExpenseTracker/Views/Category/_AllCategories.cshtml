@@ -1,0 +1,42 @@
+﻿@model IEnumerable<ExpenseTracker.Models.ExpenseCategory>
+
+
+<table class="table table-borderless table-hover table-responsive">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td> </td>
+                <td>
+                    <a asp-controller="Entry" asp-action="_ExpenseEntry" asp-route-_categoryId="@item.Id" class="text-success btn btn-dark">Details</a>
+
+                    <a asp-controller="Category" asp-action="_EntryCategory" asp-route-_catID="@item.Id" class="text-warning btn btn-dark">Update</a>
+                    <a asp-controller="Category" asp-action="RemoveCategory" asp-route-_category="@item" class="text-warning btn btn-dark">Delete</a>
+
+                </td>
+
+                
+            </tr>
+        }
+    </tbody>
+</table>
+

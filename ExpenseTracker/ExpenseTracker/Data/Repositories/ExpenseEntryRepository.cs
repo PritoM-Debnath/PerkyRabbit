@@ -8,9 +8,9 @@ namespace ExpenseTracker.Data.Repositories
 
         public ExpenseEntryRepository(AppDataContext _appDataContext) => this.appDataContext = _appDataContext;
 
-        public IEnumerable<ExpenseEntry> GetAllExpenseEntries()
+        public IEnumerable<ExpenseEntry>? GetAllExpenseEntries()
         {
-            return appDataContext.ExpenseEntries.ToList();
+            return appDataContext.ExpenseEntries.ToList() ?? null;
         }
 
         public ExpenseEntry? GetById(int _id)
@@ -20,29 +20,40 @@ namespace ExpenseTracker.Data.Repositories
 
         public IEnumerable<ExpenseEntry>? GetExpenseEntriesByCategory(ExpenseCategory expenseCategory)
         {
-            return appDataContext.ExpenseCategories.Find(expenseCategory).Expenses ?? null;
-        }
+            if (!string.IsNullOrEmpty(expenseCategory.Name))
+            {
+                return appDataContext.ExpenseCategories.FirstOrDefault(ec=>ec.Id==expenseCategory.Id).Expenses;
+            }else return null;
 
-        public bool AddExpenseEntryForCategory(ExpenseCategory expenseCategory,ExpenseEntry entry)
-        {
-            appDataContext.ExpenseCategories.Find(expenseCategory).Expenses.Add(entry);
             
-            var cc = appDataContext.SaveChanges();
-
-            return (cc != 0);
-
         }
 
-        public void RemoveExpenseCategory(ExpenseCategory expenseCategory)
+        public async Task<bool> AddExpenseEntryForCategory(int categoryId, ExpenseEntry entry)
         {
-            appDataContext.ExpenseCategories.Remove(expenseCategory);
+            var uCategory = appDataContext.ExpenseCategories.FirstOrDefault(ec => ec.Id == categoryId);
+            await Task.Delay(1);
+
+            if(uCategory != null)
+            {
+                entry.Category = uCategory;
+
+                appDataContext.ExpenseEntries.Add(entry);
+                var cc = appDataContext.SaveChanges();
+
+                return bool.Parse(cc.ToString());
+            }else return false;
+        }
+
+        public void RemoveEntryCategory(ExpenseEntry expenseEntry)
+        {
+            _= appDataContext.ExpenseEntries.Remove(expenseEntry);
             appDataContext.SaveChangesAsync();
         }
 
-        public void UpdateExpenseCategory(ExpenseCategory expenseCategory)
+        public async Task UpdateEntryCategory(ExpenseEntry entry)
         {
-            appDataContext.ExpenseCategories.Update(expenseCategory);
-            appDataContext.SaveChangesAsync();
+            await Task.Run(()=> appDataContext.ExpenseEntries.Update(entry));
+            await appDataContext.SaveChangesAsync();
         }
 
         public Task SaveChangesAsync()

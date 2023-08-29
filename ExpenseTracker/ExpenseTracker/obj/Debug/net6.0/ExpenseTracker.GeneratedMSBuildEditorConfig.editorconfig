@@ -16,6 +16,18 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = F:\GITHUB\PerkyRabbit\ExpenseTracker\ExpenseTracker
 build_property._RazorSourceGeneratorDebug = 
 
+[F:/GITHUB/PerkyRabbit/ExpenseTracker/ExpenseTracker/Views/Category/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/GITHUB/PerkyRabbit/ExpenseTracker/ExpenseTracker/Views/Category/_AllCategories.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcX0FsbENhdGVnb3JpZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/GITHUB/PerkyRabbit/ExpenseTracker/ExpenseTracker/Views/Category/_EntryCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcX0VudHJ5Q2F0ZWdvcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [F:/GITHUB/PerkyRabbit/ExpenseTracker/ExpenseTracker/Views/Entry/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW50cnlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -24,8 +36,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW50cnlcX0FsbEVudHJ5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[F:/GITHUB/PerkyRabbit/ExpenseTracker/ExpenseTracker/Views/Entry/_AllEntryByCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW50cnlcX0FsbEVudHJ5QnlDYXRlZ29yeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [F:/GITHUB/PerkyRabbit/ExpenseTracker/ExpenseTracker/Views/Entry/_ExpenseEntry.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW50cnlcX0V4cGVuc2VFbnRyeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/GITHUB/PerkyRabbit/ExpenseTracker/ExpenseTracker/Views/Entry/_ExpenseEntryByCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW50cnlcX0V4cGVuc2VFbnRyeUJ5Q2F0ZWdvcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [F:/GITHUB/PerkyRabbit/ExpenseTracker/ExpenseTracker/Views/Home/Index.cshtml]
