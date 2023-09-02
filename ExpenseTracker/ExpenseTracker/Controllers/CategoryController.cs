@@ -80,12 +80,17 @@ public class CategoryController : Controller
         return RedirectToAction("Index");
     }
 
-    public async Task<IActionResult> RemoveCategory(ExpenseCategory _category)
-    { 
-        if (ModelState.IsValid)
+    public async Task<IActionResult> RemoveCategory(int _categoryId)
+    {
+        if (_categoryId == null ) return NotFound();
+        
+        else
         {
-            await categoryRepo.RemoveExpenseCategory(_category);
+            var data = categoryRepo.GetById(_categoryId);
+            if (data == null) return NotFound();
+            else await categoryRepo.RemoveExpenseCategory(data);
         }
+            
         return RedirectToAction("Index");
     }
 

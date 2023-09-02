@@ -29,7 +29,7 @@
                 <td>
                     <a asp-controller="Entry" asp-action="_ExpenseEntry" asp-route-_categoryId="@item.Id" class="text-success btn btn-dark">Details</a>
                     <a asp-controller="Category" asp-action="_EntryCategory" asp-route-_catID="@item.Id" class="text-warning btn btn-dark">Update</a>
-                    <a asp-controller="Category" asp-action="RemoveCategory" asp-route-_category="@item" class="text-warning btn btn-dark">Delete</a>
+                    <a asp-controller="Category" asp-action="RemoveCategory" asp-route-_categoryId="@item.Id" class="text-warning btn btn-dark">Delete</a>
 
                 </td>
 
