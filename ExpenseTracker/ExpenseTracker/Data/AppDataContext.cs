@@ -20,6 +20,5 @@ namespace ExpenseTracker.Data
             optionsBuilder.UseMySql(ConnectionString, MySqlServerVersion.AutoDetect(ConnectionString));
         }
 
-
     }
 }

@@ -38,13 +38,15 @@ namespace ExpenseTracker.Data.Repositories
         public async Task RemoveExpenseCategory(ExpenseCategory expenseCategory)
         {
             appDataContext.ExpenseCategories.Remove(expenseCategory);
+            //await Task.Run(()=>appDataContext.ExpenseCategories.Remove(expenseCategory));
             await appDataContext.SaveChangesAsync();
         }
-
-        public void UpdateExpenseCategory(ExpenseCategory expenseCategory)
+        
+        public async Task  UpdateExpenseCategory(ExpenseCategory expenseCategory)
         {
             appDataContext.ExpenseCategories.Update(expenseCategory);
-            appDataContext.SaveChangesAsync();
+            //await Task.Run(()=> appDataContext.ExpenseCategories.Update(expenseCategory));
+            await appDataContext.SaveChangesAsync();
         }
 
         public Task SaveChangesAsync()

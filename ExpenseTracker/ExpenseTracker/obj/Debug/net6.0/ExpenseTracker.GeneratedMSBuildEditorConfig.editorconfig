@@ -32,16 +32,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW50cnlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/GITHUB/PerkyRabbit/ExpenseTracker/ExpenseTracker/Views/Entry/_AllEntry.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW50cnlcX0FsbEVudHJ5LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [F:/GITHUB/PerkyRabbit/ExpenseTracker/ExpenseTracker/Views/Entry/_AllEntryByCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW50cnlcX0FsbEVudHJ5QnlDYXRlZ29yeS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[F:/GITHUB/PerkyRabbit/ExpenseTracker/ExpenseTracker/Views/Entry/_ExpenseEntry.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW50cnlcX0V4cGVuc2VFbnRyeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [F:/GITHUB/PerkyRabbit/ExpenseTracker/ExpenseTracker/Views/Entry/_ExpenseEntryByCategory.cshtml]
@@ -62,10 +54,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [F:/GITHUB/PerkyRabbit/ExpenseTracker/ExpenseTracker/Views/Home/_EntryCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfRW50cnlDYXRlZ29yeS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[F:/GITHUB/PerkyRabbit/ExpenseTracker/ExpenseTracker/Views/Shared/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [F:/GITHUB/PerkyRabbit/ExpenseTracker/ExpenseTracker/Views/Shared/_ValidationScriptsPartial.cshtml]

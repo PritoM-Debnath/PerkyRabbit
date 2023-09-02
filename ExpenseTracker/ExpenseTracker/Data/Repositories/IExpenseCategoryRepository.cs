@@ -10,6 +10,6 @@ namespace ExpenseTracker.Data.Repositories
         ExpenseCategory? GetByName(string _name);
         Task RemoveExpenseCategory(ExpenseCategory expenseCategory);
         Task SaveChangesAsync();
-        void UpdateExpenseCategory(ExpenseCategory expenseCategory);
+        Task UpdateExpenseCategory(ExpenseCategory expenseCategory);
     }
 }

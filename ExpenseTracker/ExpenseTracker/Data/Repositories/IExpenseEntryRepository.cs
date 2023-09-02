@@ -8,7 +8,7 @@ namespace ExpenseTracker.Data.Repositories
         IEnumerable<ExpenseEntry> GetAllExpenseEntries();
         ExpenseEntry? GetById(int _id);
         IEnumerable<ExpenseEntry>? GetExpenseEntriesByCategory(ExpenseCategory expenseCategory);
-        void RemoveEntryCategory(ExpenseEntry expenseEntry);
+        Task RemoveEntryCategory(ExpenseEntry expenseEntry);
         Task SaveChangesAsync();
         Task UpdateEntryCategory(ExpenseEntry entry);
     }

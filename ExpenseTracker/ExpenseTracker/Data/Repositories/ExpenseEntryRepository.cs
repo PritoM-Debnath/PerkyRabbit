@@ -28,7 +28,7 @@ namespace ExpenseTracker.Data.Repositories
             
         }
 
-        public async Task<bool> AddExpenseEntryForCategory(int categoryId, ExpenseEntry entry)
+        /*public async Task<bool> AddExpenseEntryForCategory(int categoryId, ExpenseEntry entry)
         {
             var uCategory = appDataContext.ExpenseCategories.FirstOrDefault(ec => ec.Id == categoryId);
             await Task.Delay(1);
@@ -42,12 +42,29 @@ namespace ExpenseTracker.Data.Repositories
 
                 return bool.Parse(cc.ToString());
             }else return false;
+        }*/
+
+        public async Task<bool> AddExpenseEntryForCategory(int categoryId, ExpenseEntry entry)
+        {
+            var category = await appDataContext.ExpenseCategories.FindAsync(categoryId);
+
+            if (category != null)
+            {
+                entry.Category = category;
+                appDataContext.ExpenseEntries.Add(entry);
+
+                int numberOfChanges = await appDataContext.SaveChangesAsync();
+                return numberOfChanges > 0;
+            }
+
+            return false;
         }
 
-        public void RemoveEntryCategory(ExpenseEntry expenseEntry)
+
+        public async Task RemoveEntryCategory(ExpenseEntry expenseEntry)
         {
-            _= appDataContext.ExpenseEntries.Remove(expenseEntry);
-            appDataContext.SaveChangesAsync();
+            await Task.Run(() => appDataContext.ExpenseEntries.Remove(expenseEntry));
+            await appDataContext.SaveChangesAsync();
         }
 
         public async Task UpdateEntryCategory(ExpenseEntry entry)
